@@ -6,7 +6,6 @@
     "start:dev": "parcel index.html",
     "start:watch": "./node_modules/.bin/parcel watch index.html",
     "build": "./node_modules/.bin/parcel build index.html",
-    "lint-standard": "standard | snazzy",
     "lint": "eslint ."
   },
   "dependencies": {
