@@ -6,6 +6,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
 }
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -19,14 +20,17 @@ body {
   color: #2c3e50;
   font-size: 3em;
 }
+
 .hello-world:before {
   position: absolute;
   content: "";
   top: -600%;
-  height: 600%; /* 6X of .hello-world */
+  height: 600%;
+  /* 6X of .hello-world */
   width: 100%;
   background: url("../assets/images/hello.svg") 50% 50% / contain no-repeat;
 }
+
 .hello-world:after {
   position: absolute;
   z-index: -1;
@@ -41,4 +45,35 @@ body {
 .hello-world__tech {
   font-weight: 700;
   font-style: italic;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+button.dark-button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #000000;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button.dark-button:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+@media all and (max-width:30em) {
+  button.dark-button {
+    display: block;
+    margin: 0.4em auto;
+  }
 }

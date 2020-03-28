@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
-import { createStore } from 'redux'
+
 // Redux
-import rootReducer from '../../redux/reducers/rootReducer'
+import store from '../../redux/store'
+
 // Components
 import HelloWorld from '../HelloWorld/HelloWorld'
-
-const initialState = { tech: 'Reacto+' }
-const store = createStore(rootReducer, initialState)
+import ButtonGroup from '../ButtonGroup/ButtonGroup'
 
 class App extends Component {
   render () {
-    return <HelloWorld tech={store.getState().tech} />
+    return (
+      <>
+        <HelloWorld tech={store.getState().tech} />
+        <ButtonGroup technologies={['React', 'Elm', 'React-redux']} />
+      </>
+    )
   }
 }
 
