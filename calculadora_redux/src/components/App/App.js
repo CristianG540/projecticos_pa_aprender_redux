@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-
 // Redux
 import store from '../../redux/store'
-
 // Components
 import CalculatorButton from '../CalculatorButton/CalculatorButton'
+// Constants
+import { ALL_CLEAR } from '../CalculatorButton/constants'
 
 class App extends Component {
   render () {
     return (
       <div className='calculator'>
-        <input type='text' className='calculator-screen' value={store.getState().screen.content} disabled />
+        <textarea className='calculator-screen' value={store.getState().screen.content} disabled />
 
         <div className='calculator-keys'>
           <CalculatorButton id='plus-btn' text='+' cssClass='operator' />
@@ -32,7 +32,7 @@ class App extends Component {
 
           <CalculatorButton id='zero-btn' text='0' />
           <CalculatorButton id='decimal-btn' text='.' cssClass='decimal' />
-          <CalculatorButton id='all-clear-btn' text='AC' value='all-clear' cssClass='all-clear' />
+          <CalculatorButton id='all-clear-btn' text='AC' value={ALL_CLEAR} cssClass='all-clear' />
           <CalculatorButton id='equal-btn' text='=' cssClass='equal-sign' />
         </div>
 
