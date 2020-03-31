@@ -6,13 +6,9 @@ import {
   EVALUATE_SCREEN_VALUE
 } from '../constants/action-types'
 // Constants
-import { MALFORMED_EXPRESSION } from '../constants/errors'
+import { MALFORMED_EXPRESSION, INFINITY } from '../constants/errors'
 
 const rootReducer = (prevState, action) => {
-  console.log(
-    'rootReducer -> action',
-    action
-  )
   const { payload } = action
   const { content } = prevState.screen
   let { wasChanged } = prevState.screen
@@ -49,11 +45,12 @@ const rootReducer = (prevState, action) => {
       try {
         newScreenValue = evaluate(content).toString()
         wasChanged = true
-      } catch (error) {
-        console.log(
-          'rootReducer -> error',
-          error
-        )
+
+        if (newScreenValue === INFINITY) {
+          newScreenValue = INFINITY
+          wasChanged = false
+        }
+      } catch (_) {
         newScreenValue = MALFORMED_EXPRESSION
         wasChanged = false
       }
