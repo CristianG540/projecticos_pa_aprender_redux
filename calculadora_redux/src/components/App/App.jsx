@@ -11,7 +11,6 @@ class App extends Component {
     return (
       <div className='calculator'>
         <textarea className='calculator-screen' value={store.getState().screen.content} disabled />
-
         <div className='calculator-keys'>
           <CalculatorButton id='plus-btn' text='+' cssClass='operator' />
           <CalculatorButton id='minus-btn' text='-' cssClass='operator' />
@@ -35,9 +34,6 @@ class App extends Component {
           <CalculatorButton id='all-clear-btn' text='AC' value={ALL_CLEAR} cssClass='all-clear' />
           <CalculatorButton id='equal-btn' text='=' cssClass='equal-sign' />
         </div>
-
-        {/* <HelloWorld tech={store.getState().tech} />
-        <ButtonGroup technologies={['React', 'Elm', 'React-redux']} /> */}
       </div>
     )
   }
