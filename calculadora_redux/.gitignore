@@ -30,6 +30,7 @@ plugins/android.json
 plugins/ios.json
 www/
 $RECYCLE.BIN/
+.parcel-cache/
 
 .DS_Store
 Thumbs.db
